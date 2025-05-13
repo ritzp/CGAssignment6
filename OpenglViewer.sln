@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35913.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FlatShading", "FlatShading\FlatShading.vcxproj", "{FECC60F1-4EBC-42BE-8357-5ABE53F88D93}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GouraudShading", "GouraudShading\GouraudShading.vcxproj", "{2F2A5E3B-0AB9-4C78-B350-B0501CE3DCD9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PhongShading", "PhongShading\PhongShading.vcxproj", "{1B6C974C-720A-4C81-B86C-4B5386577F1E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FECC60F1-4EBC-42BE-8357-5ABE53F88D93}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FECC60F1-4EBC-42BE-8357-5ABE53F88D93}.Debug|Win32.Build.0 = Debug|Win32
+		{FECC60F1-4EBC-42BE-8357-5ABE53F88D93}.Release|Win32.ActiveCfg = Release|Win32
+		{FECC60F1-4EBC-42BE-8357-5ABE53F88D93}.Release|Win32.Build.0 = Release|Win32
+		{2F2A5E3B-0AB9-4C78-B350-B0501CE3DCD9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2F2A5E3B-0AB9-4C78-B350-B0501CE3DCD9}.Debug|Win32.Build.0 = Debug|Win32
+		{2F2A5E3B-0AB9-4C78-B350-B0501CE3DCD9}.Release|Win32.ActiveCfg = Release|Win32
+		{2F2A5E3B-0AB9-4C78-B350-B0501CE3DCD9}.Release|Win32.Build.0 = Release|Win32
+		{1B6C974C-720A-4C81-B86C-4B5386577F1E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1B6C974C-720A-4C81-B86C-4B5386577F1E}.Debug|Win32.Build.0 = Debug|Win32
+		{1B6C974C-720A-4C81-B86C-4B5386577F1E}.Release|Win32.ActiveCfg = Release|Win32
+		{1B6C974C-720A-4C81-B86C-4B5386577F1E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9A057650-084C-4900-AD6D-A0C4D42DFC1E}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,26 @@
+﻿  sphere_scene.cpp
+C:\Users\taka\Desktop\CGAssignment6\FlatShading\sphere_scene.cpp(121,65): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\taka\Desktop\CGAssignment6\FlatShading\sphere_scene.cpp(121,59): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\taka\Desktop\CGAssignment6\FlatShading\sphere_scene.cpp(121,54): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\taka\Desktop\CGAssignment6\FlatShading\sphere_scene.cpp(121,49): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\taka\Desktop\CGAssignment6\FlatShading\sphere_scene.cpp(121,43): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\taka\Desktop\CGAssignment6\FlatShading\sphere_scene.cpp(129,15): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\taka\Desktop\CGAssignment6\FlatShading\sphere_scene.cpp(229,36): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\taka\Desktop\CGAssignment6\FlatShading\sphere_scene.cpp(230,35): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\taka\Desktop\CGAssignment6\FlatShading\sphere_scene.cpp(231,36): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\taka\Desktop\CGAssignment6\FlatShading\sphere_scene.cpp(232,35): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\taka\Desktop\CGAssignment6\FlatShading\sphere_scene.cpp(289,45): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\taka\Desktop\CGAssignment6\FlatShading\sphere_scene.cpp(290,49): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.
+  GLM: rotate_slow function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.
+  GLM: perspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.
+  GLM: perspectiveFov function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.
+  GLM: infinitePerspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.
+  GLM: tweakedInfinitePerspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.
+  GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.
+  GLM: roll function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.
+  GLM: pitch function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.
+  GLM: yaw function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.
+  GLM: angle function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.
+  GLM: angleAxis function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.
+  FlatShading.vcxproj -> C:\Users\taka\Desktop\CGAssignment6\bin\FlatShading.exe
