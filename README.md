@@ -23,7 +23,7 @@ There are three projects, and each project implements Flat Shading, Gouraud Shad
 3. Click Build. (Build the project)<br>
 4. Find Phong Shading in the Solution Explorer on the right and right-click on it. (Repeat step 2)<br>
 5. Click Debug -> Start without debugging (Run the project)
-<br>
+<br><br>
 If you want to close the project window, input 'Q' to close the OpenGL Viewer window and input any key to close the command window.
 <br>
 <h3>Result Screenshot</h3>
