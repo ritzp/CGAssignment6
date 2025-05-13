@@ -6,21 +6,21 @@ There are three projects, and each project implements Flat Shading, Gouraud Shad
 <h4>Flat Shading</h4>
 1. Open OpenglViewer.sln<br>
 2. Find Flat Shading in the Solution Explorer on the right and right-click on it.<br>
-3. Click Build. (Build the project)
+3. Click Build. (Build the project)<br>
 4. Find Flat Shading in the Solution Explorer on the right and right-click on it. (Repeat step 2)<br>
 5. Click Debug -> Start without debugging (Run the project)
 <br>
 <h4>Gouraud Shading</h4>
 1. Open OpenglViewer.sln<br>
 2. Find Gouraud Shading in the Solution Explorer on the right and right-click on it.<br>
-3. Click Build. (Build the project)
+3. Click Build. (Build the project)<br>
 4. Find Gouraud Shading in the Solution Explorer on the right and right-click on it. (Repeat step 2)<br>
 5. Click Debug -> Start without debugging (Run the project)
 <br>
 <h4>Phong Shading</h4>
 1. Open OpenglViewer.sln<br>
 2. Find Phong Shading in the Solution Explorer on the right and right-click on it.<br>
-3. Click Build. (Build the project)
+3. Click Build. (Build the project)<br>
 4. Find Phong Shading in the Solution Explorer on the right and right-click on it. (Repeat step 2)<br>
 5. Click Debug -> Start without debugging (Run the project)
 <br>
