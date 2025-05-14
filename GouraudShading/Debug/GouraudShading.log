@@ -1,16 +1,16 @@
 ﻿  sphere_scene.cpp
-C:\Users\taka\Desktop\CGAssignment6\GouraudShading\sphere_scene.cpp(113,65): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taka\Desktop\CGAssignment6\GouraudShading\sphere_scene.cpp(113,59): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taka\Desktop\CGAssignment6\GouraudShading\sphere_scene.cpp(113,54): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taka\Desktop\CGAssignment6\GouraudShading\sphere_scene.cpp(113,49): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taka\Desktop\CGAssignment6\GouraudShading\sphere_scene.cpp(113,43): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taka\Desktop\CGAssignment6\GouraudShading\sphere_scene.cpp(121,15): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\taka\Desktop\CGAssignment6\GouraudShading\sphere_scene.cpp(237,36): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\taka\Desktop\CGAssignment6\GouraudShading\sphere_scene.cpp(238,35): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\taka\Desktop\CGAssignment6\GouraudShading\sphere_scene.cpp(239,36): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\taka\Desktop\CGAssignment6\GouraudShading\sphere_scene.cpp(240,35): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\taka\Desktop\CGAssignment6\GouraudShading\sphere_scene.cpp(298,45): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\taka\Desktop\CGAssignment6\GouraudShading\sphere_scene.cpp(299,49): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\taka\Desktop\CGAssignment6\GouraudShading\sphere_scene.cpp(128,65): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\taka\Desktop\CGAssignment6\GouraudShading\sphere_scene.cpp(128,59): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\taka\Desktop\CGAssignment6\GouraudShading\sphere_scene.cpp(128,54): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\taka\Desktop\CGAssignment6\GouraudShading\sphere_scene.cpp(128,49): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\taka\Desktop\CGAssignment6\GouraudShading\sphere_scene.cpp(128,43): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\taka\Desktop\CGAssignment6\GouraudShading\sphere_scene.cpp(136,15): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\taka\Desktop\CGAssignment6\GouraudShading\sphere_scene.cpp(260,36): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\taka\Desktop\CGAssignment6\GouraudShading\sphere_scene.cpp(261,35): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\taka\Desktop\CGAssignment6\GouraudShading\sphere_scene.cpp(262,36): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\taka\Desktop\CGAssignment6\GouraudShading\sphere_scene.cpp(263,35): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\taka\Desktop\CGAssignment6\GouraudShading\sphere_scene.cpp(321,45): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\taka\Desktop\CGAssignment6\GouraudShading\sphere_scene.cpp(322,49): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.
   GLM: rotate_slow function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.
   GLM: perspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.

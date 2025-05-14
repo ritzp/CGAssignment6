@@ -48,13 +48,22 @@ Vertex multiply(const float matrix[4][4], const Vertex& v) {
 }
 
 Vertex modeling_transform(Vertex _v, float sx, float sy, float sz, float tx, float ty, float tz) {
-    float mm[4][4] = {
-        {sx, 0, 0, tx},
-        {0, sy, 0, ty},
-        {0, 0, sz, tz},
+    float ms[4][4] = {
+       {sx, 0, 0, 0},
+       {0, sy, 0, 0},
+       {0, 0, sz, 0},
+       { 0, 0, 0, 1 }
+    };
+    Vertex result = multiply(ms, _v);
+
+    float mt[4][4] = {
+        {1, 0, 0, tx},
+        {0, 1, 0, ty},
+        {0, 0, 1, tz},
         { 0, 0, 0, 1 }
     };
-    Vertex result = multiply(mm, _v);
+
+    result = multiply(mt, result);
     result.color = _v.color;
     return result;
 }
@@ -75,8 +84,8 @@ Vertex projection_transform(Vertex _v, float l, float r, float t, float b, float
     float mp[4][4] = {
         {2 * n / (r - l), 0, (l + r) / (l - r), 0},
         {0, 2 * n / (t - b), (b + t) / (b - t), 0},
-        {0, 0, (f + n) / (n - f), (2 * f * n) / (f - n)},
-        {0, 0, 1, 0}
+        {0, 0, (f + n) / (n - f), (-2 * f * n) / (f - n)},
+        {0, 0, -1, 0}
     };
     Vertex result = multiply(mp, _v);
     if (result.w != 0) {
@@ -89,10 +98,16 @@ Vertex projection_transform(Vertex _v, float l, float r, float t, float b, float
     return result;
 }
 
-Vertex viewport_transform(Vertex v, float width, float height) {
-    v.x = (v.x + 1) * width * 0.5f;
-    v.y = (v.y + 1) * height * 0.5f;
-    return v;
+Vertex viewport_transform(Vertex _v, float width, float height) {
+    float mv[4][4] = {
+        {width / 2.0f, 0, 0, (width - 1) / 2.0f},
+        {0, height / 2.0f, 0, (height - 1) / 2.0f},
+        {0, 0, 1, 0},
+        {0, 0, 0, 1}
+    };
+    Vertex result = multiply(mv, _v);
+    result.color = _v.color;
+    return result;
 }
 
 std::vector<Vertex> transformedVertices;
@@ -110,7 +125,7 @@ void transform_vertices() {
 
         vert = modeling_transform(vert, 2, 2, 2, 0, 0, -7);
         vert = camera_transform(vert, u, v, w, e);
-        vert = projection_transform(vert, -0.1, 0.1, 0.1, -0.1, -0.1, -1000);
+        vert = projection_transform(vert, -0.1, 0.1, 0.1, -0.1, 0.1, 1000);
         vert = viewport_transform(vert, WIDTH, HEIGHT);
 
         transformedVertices[i] = vert;
@@ -174,25 +189,29 @@ void calculate_vertex_colors() {
     Vector3 lightPos = { -4.0f, 4.0f, -3.0f };
     Vector3 viewPos = { 0.0f, 0.0f, 0.0f };
 
-    // 각 버텍스의 노말을 저장할 벡터
     std::vector<Vector3> vertexNormals(gVertices.size(), { 0.0f, 0.0f, 0.0f });
-    std::vector<int> normalCount(gVertices.size(), 0); // 각 버텍스의 이웃 삼각형 수
+    std::vector<int> normalCount(gVertices.size(), 0);
 
-    // 각 삼각형의 노말을 계산하고 이웃한 버텍스에 더하기
     for (int i = 0; i < gNumTriangles; ++i) {
         int idx0 = gIndexBuffer[3 * i + 0];
         int idx1 = gIndexBuffer[3 * i + 1];
         int idx2 = gIndexBuffer[3 * i + 2];
 
-        Vector3 p0 = { gVertices[idx0].x, gVertices[idx0].y, gVertices[idx0].z };
-        Vector3 p1 = { gVertices[idx1].x, gVertices[idx1].y, gVertices[idx1].z };
-        Vector3 p2 = { gVertices[idx2].x, gVertices[idx2].y, gVertices[idx2].z };
+        Vertex v0 = gVertices[idx0];
+        Vertex v1 = gVertices[idx1];
+        Vertex v2 = gVertices[idx2];
+
+        Vertex pt = modeling_transform(v0, 2, 2, 2, 0, 0, -7);
+        Vector3 p0 = { pt.x, pt.y, pt.z };
+        pt = modeling_transform(v1, 2, 2, 2, 0, 0, -7);
+        Vector3 p1 = { pt.x, pt.y, pt.z };
+        pt = modeling_transform(v2, 2, 2, 2, 0, 0, -7);
+        Vector3 p2 = { pt.x, pt.y, pt.z };
 
         Vector3 edge1 = p1 - p0;
         Vector3 edge2 = p2 - p0;
-        Vector3 normal = normalize(cross(edge1, edge2)); // 삼각형 노말
+        Vector3 normal = normalize(cross(edge1, edge2));
 
-        // 각 버텍스에 삼각형 노말을 더하고 카운트 증가
         vertexNormals[idx0] = vertexNormals[idx0] + normal;
         vertexNormals[idx1] = vertexNormals[idx1] + normal;
         vertexNormals[idx2] = vertexNormals[idx2] + normal;
@@ -201,17 +220,16 @@ void calculate_vertex_colors() {
         normalCount[idx2]++;
     }
 
-    // 각 버텍스의 평균 노말을 계산 (이웃한 삼각형의 노말 평균)
     for (size_t i = 0; i < gVertices.size(); ++i) {
         if (normalCount[i] > 0) {
             vertexNormals[i] = vertexNormals[i] / static_cast<float>(normalCount[i]);
-            vertexNormals[i] = normalize(vertexNormals[i]); // 정규화
+            vertexNormals[i] = normalize(vertexNormals[i]);
         }
     }
 
-    // 최종적으로 각 버텍스에 shading 적용
     for (size_t i = 0; i < gVertices.size(); ++i) {
-        Vector3 pos = { gVertices[i].x, gVertices[i].y, gVertices[i].z };
+        Vertex pt = modeling_transform(gVertices[i], 2, 2, 2, 0, 0, -7);
+        Vector3 pos = { pt.x, pt.y, pt.z };
         Vector3 normal = vertexNormals[i];
         gVertices[i].color = shading(normal, lightPos, viewPos, pos);
     }

@@ -80,8 +80,8 @@ Vertex projection_transform(Vertex _v, float l, float r, float t, float b, float
     float mp[4][4] = {
         {2 * n / (r - l), 0, (l + r) / (l - r), 0},
         {0, 2 * n / (t - b), (b + t) / (b - t), 0},
-        {0, 0, (f + n) / (n - f), (2 * f * n) / (f - n)},
-        {0, 0, 1, 0}
+        {0, 0, (f + n) / (n - f), (-2 * f * n) / (f - n)},
+        {0, 0, -1, 0}
     };
     _v = multiply(mp, _v);
     if (_v.w != 0) {
@@ -95,8 +95,8 @@ Vertex projection_transform(Vertex _v, float l, float r, float t, float b, float
 
 Vertex viewport_transform(Vertex _v, float width, float height) {
     float mv[4][4] = {
-        {width / 2, 0, 0, (width - 1) / 2},
-        {0, height / 2, 0, (height - 1) / 2},
+        {width / 2.0f, 0, 0, (width - 1) / 2.0f},
+        {0, height / 2.0f, 0, (height - 1) / 2.0f},
         {0, 0, 1, 0},
         {0, 0, 0, 1}
     };
@@ -115,12 +115,10 @@ void transform_vertices() {
 
     for (size_t i = 0; i < gVertices.size(); ++i) {
         Vertex vert = gVertices[i];
-
         vert = modeling_transform(vert, 2, 2, 2, 0, 0, -7);
         vert = camera_transform(vert, u, v, w, e);
-        vert = projection_transform(vert, -0.1, 0.1, 0.1, -0.1, -0.1, -1000);
+        vert = projection_transform(vert, -0.1, 0.1, 0.1, -0.1, 0.1, 1000);
         vert = viewport_transform(vert, WIDTH, HEIGHT);
-
         transformedVertices[i] = vert;
     }
 }
@@ -151,6 +149,9 @@ Vector3 shading(Vector3 normal, Vector3 lightPos, Vector3 viewPos, Vector3 pos) 
     Vector3 l = normalize(lightPos - pos);
     Vector3 v = normalize(viewPos - pos);
     Vector3 h = normalize(l + v);
+    if (dot(n, v) < 0) {
+        n = n * -1.0f;
+    }
 
     Vector3 ka = { 0.0f, 1.0f, 0.0f };
     Vector3 kd = { 0.0f, 0.5f, 0.0f };
@@ -194,9 +195,12 @@ void calculate_triangle_colors() {
         Vertex v1 = gVertices[idx1];
         Vertex v2 = gVertices[idx2];
 
-        Vector3 p0 = { v0.x, v0.y, v0.z };
-        Vector3 p1 = { v1.x, v1.y, v1.z };
-        Vector3 p2 = { v2.x, v2.y, v2.z };
+        Vertex pt = modeling_transform(v0, 2, 2, 2, 0, 0, -7);
+        Vector3 p0 = {pt.x, pt.y, pt.z};
+        pt = modeling_transform(v1, 2, 2, 2, 0, 0, -7);
+        Vector3 p1 = { pt.x, pt.y, pt.z };
+        pt = modeling_transform(v2, 2, 2, 2, 0, 0, -7);
+        Vector3 p2 = { pt.x, pt.y, pt.z };
 
         Vector3 edge1 = p1 - p0;
         Vector3 edge2 = p2 - p0;
