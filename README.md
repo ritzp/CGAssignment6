@@ -28,11 +28,11 @@ If you want to close the project window, input 'Q' to close the OpenGL Viewer wi
 <br>
 <h3>Result Screenshot</h3>
 <h4>Flat Shading</h4>
-<img src="https://github.com/user-attachments/assets/6dd62422-2d52-4d48-a918-b673ddc5d715">
+<img src="https://github.com/user-attachments/assets/55126a57-a3c8-4a70-ab48-3e642da2b199">
 <br>
 <h4>Gouraud Shading</h4>
-<img src="https://github.com/user-attachments/assets/66290e2a-3f85-4af1-8bde-1c319d5cd12e">
+<img src="https://github.com/user-attachments/assets/2d9f1109-5540-4ea0-b7fe-dc98d10ce856">
 <br>
 <h4>Phong Shading</h4>
-<img src="https://github.com/user-attachments/assets/51450380-9ad6-430c-bb83-ad49acfd8a1a">
+<img src="https://github.com/user-attachments/assets/f4adc9a1-5e89-4212-add6-0ffcb8754305">
 
